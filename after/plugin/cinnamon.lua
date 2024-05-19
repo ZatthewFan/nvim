@@ -8,7 +8,7 @@ require("cinnamon").setup({
     -- OPTIONS:
     centered = true,
     disabled = false,   -- disables plugin
-    default_delay = 7,
+    default_delay = 4,
     horizontal_scroll = false,
 })
 -- DEFAULT_KEYMAPS:
