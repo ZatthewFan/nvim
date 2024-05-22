@@ -70,7 +70,6 @@ vim.keymap.set("n", "E", "<Esc>ve")
 vim.keymap.set("n", "W", "<Esc>vw")
 
 -- enabling Ctrl+Backspace to delete words
-vim.keymap.set("n", "<C-BS>", "i<C-w>")
 vim.keymap.set("i", "<C-BS>", "<C-w>")
 
 -- Ctrl+Backspace for arch vm
