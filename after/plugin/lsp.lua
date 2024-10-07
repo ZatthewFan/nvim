@@ -22,6 +22,7 @@ require('mason-lspconfig').setup({
       "lua_ls",
       "rust_analyzer",
       "tsserver",
+      "clangd",
   },
   handlers = {
     lsp_zero.default_setup,
