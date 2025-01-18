@@ -7,10 +7,12 @@ require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
 --     -- preselects first item
     preselect = cmp.PreselectMode.None,
--- 
---     completion = {
---         completeopt = 'menu,menuone,noinsert',
---     },
+
+    completion = {
+        -- autocomplete = false,
+        -- completeopt = 'menu,menuone,noinsert',
+        completeopt = 'menuone, noselect',
+    },
 
     sources = {
         {name = "path"},
@@ -24,16 +26,47 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         -- ['<C-y>'] = cmp.mapping.confirm({select = true}),
         ['<CR>'] = cmp.mapping.confirm({select = false}),
+
+--         -- for manual menu invoking
+--         ['<C-Space>'] = cmp.mapping.complete(),
+
+        -- for manual menu closing
+        ['<C-Space>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.close()
+            else
+                fallback() -- Allow the default behavior if the menu is not visible
+            end
+        end, { 'i', 's' }),  -- Ensure it works in insert and select modes
+
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
 
-        ['<Tab>'] = cmp_action.luasnip_supertab(),
-        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+--        ['<Tab>'] = cmp_action.luasnip_supertab(),
+--        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
 
-        -- for manual menu invoking
-        ['<C-Space>'] = cmp.mapping.complete(),
+----------------------------------------------------------------------------------
+        -- Tab to cycle forward through options
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()  -- If the menu is not visible, do the default action (e.g., insert a tab)
+            end
+        end, { 'i', 's' }),
+
+        -- Shift-Tab to cycle backward through options
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()  -- If the menu is not visible, do the default action (e.g., insert a tab)
+            end
+        end, { 'i', 's' }),
+----------------------------------------------------------------------------------
+
     }),
 
     snippet = {
