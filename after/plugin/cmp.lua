@@ -30,7 +30,7 @@ cmp.setup({
 --         -- for manual menu invoking
 --         ['<C-Space>'] = cmp.mapping.complete(),
 
-        -- for manual menu closing
+        -- for manual menu closing --
         ['<C-Space>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.close()
@@ -43,6 +43,7 @@ cmp.setup({
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+        -----------------------------
 
 --        ['<Tab>'] = cmp_action.luasnip_supertab(),
 --        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
