@@ -38,10 +38,6 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>x", "\"_x")
 vim.keymap.set("v", "<leader>x", "\"_x")
 
--- unbinds Q and q
-vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "q", "<nop>")
-
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
