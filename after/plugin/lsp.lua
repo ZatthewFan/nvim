@@ -18,6 +18,7 @@ require('mason-lspconfig').setup({
       "gopls",
       "jdtls",
       "pyright",
+      "jsonls",
       "lua_ls",
       "rust_analyzer",
       "tsserver",
