@@ -4,5 +4,6 @@ require("cyberdream").setup({
     hide_fillchars = true,
     borderless_telescope = false,
     terminal_colors = true,
+    variant = "default",
 })
 vim.cmd("colorscheme cyberdream")

@@ -71,3 +71,6 @@ vim.keymap.set("i", "<C-BS>", "<C-w>")
 -- Ctrl+Backspace for arch vm
 vim.keymap.set("n", "<C-H>", "vb<leader>d")
 vim.keymap.set("i", "<C-H>", "<C-w>")
+
+-- adds Ctrl+/ binding as commenting out a line in normal mode
+vim.keymap.set("n", "<C-_>", "<cmd>normal gcc<CR>")
