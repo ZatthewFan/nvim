@@ -79,3 +79,6 @@ vim.keymap.set("n", "<C-_>", "<cmd>normal gcc<CR>")
 vim.keymap.set({"v", "x"}, "<C-_>", function()
   vim.api.nvim_feedkeys("gc", "x", false)
 end, { noremap = true, silent = true })
+
+-- Ctrl+p clears the unnamed (paste) register
+vim.keymap.set("n", "<C-p>", "<cmd>let @\" = ''<CR>")
