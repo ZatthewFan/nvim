@@ -74,9 +74,14 @@ vim.keymap.set("i", "<C-H>", "<C-w>")
 
 -- adds Ctrl+/ binding as commenting out a line in normal mode
 vim.keymap.set("n", "<C-_>", "<cmd>normal gcc<CR>")
+vim.keymap.set("n", "<C-/>", "<cmd>normal gcc<CR>")
 
 -- adds Ctrl+/ binding as commenting out highlighted lines in visual line and visual block mode
 vim.keymap.set({"v", "x"}, "<C-_>", function()
+  vim.api.nvim_feedkeys("gc", "x", false)
+end, { noremap = true, silent = true })
+
+vim.keymap.set({"v", "x"}, "<C-/>", function()
   vim.api.nvim_feedkeys("gc", "x", false)
 end, { noremap = true, silent = true })
 
