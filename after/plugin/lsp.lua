@@ -21,7 +21,7 @@ require('mason-lspconfig').setup({
       "jsonls",
       "lua_ls",
       "rust_analyzer",
-      "tsserver",
+      "ts_ls",
       "clangd",
   },
   handlers = {
