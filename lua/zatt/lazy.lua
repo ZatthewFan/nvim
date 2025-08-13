@@ -43,6 +43,14 @@ local plugins = {
 
     "folke/trouble.nvim",
 
+    "kylechui/nvim-surround",
+
+    "jinh0/eyeliner.nvim",
+
+    { "echasnovski/mini.nvim", version = "*" },
+
+    "MeanderingProgrammer/render-markdown.nvim",
+
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
