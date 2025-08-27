@@ -86,6 +86,14 @@ local plugins = {
 
     "MeanderingProgrammer/render-markdown.nvim",
 
+    "lewis6991/gitsigns.nvim",
+
+    "MagicDuck/grug-far.nvim",
+
+    "sphamba/smear-cursor.nvim",
+
+    "rmagatti/goto-preview",
+
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
