@@ -32,3 +32,13 @@ require('mason-lspconfig').setup({
     end,
   }
 })
+
+-- Configure jdtls to always use Java 21
+require('lspconfig').jdtls.setup({
+  on_new_config = function(new_config, _)
+    new_config.cmd_env = vim.tbl_extend("force", new_config.cmd_env or {}, {
+      JAVA_HOME = "/usr/lib/jvm/java-21-openjdk",
+      PATH = "/usr/lib/jvm/java-21-openjdk/bin:" .. os.getenv("PATH"),
+    })
+  end,
+})
