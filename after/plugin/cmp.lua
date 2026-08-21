@@ -76,9 +76,24 @@ cmp.setup({
         end,
     },
 
+    -- window = {
+    --     completion = cmp.config.window.bordered(),
+    --     documentation = cmp.config.window.bordered(),
+    -- },
+
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+            border = "rounded",
+            -- Link background to NormalNC (which is transparent in gruvbox-material)
+            -- and clear FloatBorder background
+            winhighlight = "Normal:NormalNC,FloatBorder:None,CursorLine:PmenuSel,Search:None",
+            col_offset = 0, -- negative = shift left; positive = shift right
+            side_padding = 0,
+        }),
+        documentation = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:NormalNC,FloatBorder:None,CursorLine:PmenuSel,Search:None",
+        }),
     },
 
     --- (Optional) Show source name in completion menu
